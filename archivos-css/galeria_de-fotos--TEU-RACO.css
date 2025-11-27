@@ -1,0 +1,406 @@
+/* Sección general del carrusel */
+.slider-teu-raco {
+  padding: 1rem 0.5rem;        /* menos margen lateral */
+  background-color: #ffffff;
+}
+
+/* Contenedor del carrusel */
+.slider-truk {
+  display: flex;
+  gap: 0.5rem;                 /* menos separación entre fotos */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+
+/* Imágenes del carrusel */
+.slider-truk img {
+  flex: 0 0 85vw;              /* casi todo el ancho del móvil */
+  max-width: 22rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border:#2070f0 4px solid;
+  border-radius: 0.75rem;
+  scroll-snap-align: center;
+  box-shadow: 0 6px 18px rgba(32, 32, 32, 0.15);
+}
+.slider-truck img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Tablet */
+@media (min-width: 48rem) {
+  .slider-teu-raco {
+    padding: 2rem 1rem;        /* sigue más cerca del borde */
+  }
+
+  .slider-truk img {
+    flex: 0 0 16rem;           /* más estrechas */
+  }
+}
+
+/* Escritorio */
+@media (min-width: 64rem) {
+  .slider-teu-raco {
+    padding: 2.5rem 1rem;
+  }
+
+  .slider-truk {
+    max-width: 85rem;
+    margin: 0 auto;
+  }
+
+  .slider-truk img {
+    flex: 0 0 18rem;
+  }
+}
+/* ===== SCROLL PERSONALIZADO PARA EL CARRUSEL ===== */
+
+.slider-truk::-webkit-scrollbar {
+  height: 10px;                     /* grosor del scroll */
+}
+
+.slider-truk::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.08);      /* fondo suave */
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
+
+.slider-truk::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7bf58a, #5dd4ff);
+  border-radius: 10px;
+  border: 2px solid transparent;     /* efecto de “aire” alrededor */
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+/* Efecto hover */
+.slider-truk::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #70e988, #33c5ff);
+}
+
+/* Para Firefox (scroll moderno) */
+.slider-truk {
+  scrollbar-width: thin;
+  scrollbar-color: #7bf58a rgba(0,0,0,0.12);
+}
+/*finaliza el estilo del carrusel */
+
+/*comienza el estilo del nav y del titulo */
+
+/*estilo del titulo */
+.container-titul{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  animation: wpp-pop 0.5s ease;
+
+}
+.titulo-principal_teuraco{
+font-size: 7rem;
+font-weight: 900;
+color: #93d17c;
+/* CONTORNO SIMULADO CON GRADIENTE */
+text-shadow:
+  5px 5px 0 #9b8d22,
+  2px 2px 0 #22c55e,
+ -2px -5px 0 #2070f0,
+ -2px -5px 0 #22c55e; 
+}
+      .titulo-principal_teuraco:hover{
+        color: #2070f0;
+        font-size: 7.5rem;
+        /* CONTORNO SIMULADO CON GRADIENTE */
+        text-shadow:
+        5px 5px 0 #7e7216,
+         2px 2px 0 #17b651,
+        -2px -5px 0 #2070f0,
+        -2px -5px 0 #0ea345; 
+        transition: color 0.5s ease, font-size 0.5s ease;
+}
+
+/*estilo del nav */
+
+.mi-nav{
+  margin-bottom: 1rem;
+  max-width: 20rem;
+  margin: 0 auto;
+
+}
+
+a{
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: rgb(5, 57, 67);
+  border-radius: 8rem;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.mi-nav .nav-link_1:hover{
+  background: linear-gradient(to right, rgb(183, 182, 175), rgb(199, 235, 243));
+  color: rgb(68, 98, 173);
+  
+}
+.mi-nav .nav-link_2:hover{
+  background: linear-gradient(to right, rgb(183, 182, 175), rgb(199, 235, 243));
+  color: rgb(190, 138, 198);
+  
+}
+.mi-nav .nav-link_3:hover{
+  background: linear-gradient(to right, rgb(183, 182, 175), rgb(199, 235, 243));
+  color: rgb(103, 116, 5);
+  
+}
+.navbar{
+  display:flex;
+  justify-content: center;
+}
+
+/*aca empieza el estilo del video presentacion del teu raco */
+
+/* Sección del vídeo */
+/* Sección del video */
+#video-section {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor responsivo 16:9 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;              /* ancho máximo en escritorio */
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Mantener relación 16:9 */
+.video-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;           /* 16:9 */
+}
+
+/* iframe ocupa toda la caja */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  #video-section {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+  #video-section {
+    padding: 4rem 2rem;
+  }
+}
+
+/*termina el estilo del video presentacion del teu raco*/
+
+
+
+/*comienza el estilo de la seccion descriptiva del teu raco*//* SECCIÓN GENERAL */
+.section-blanca {
+  position: relative;
+  padding: 2rem 1.5rem;      /* móvil */
+  color: #ffffff;  
+  margin-top: 5rem;          /* texto blanco */
+  
+  /* imagen de fondo */
+  background-image: url("../fotos/balloons.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* CAPA OSCURA PARA LEER BIEN EL TEXTO */
+.section-blanca::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(37, 36, 36, 0.45);  /* oscurece la foto */
+  z-index: 0;
+}
+
+.section-blanca * {
+  
+  position: relative;
+  z-index: 1; /* el texto va encima */
+  animation: wpp-pop 0.9s ease;
+}
+
+/* CONTENEDOR INTERNO */
+.section-container {
+  max-width: 50rem;          /* ~800px */
+  margin: 0 auto;
+}
+
+/* TÍTULO */
+.titulo-descriptivo-teu-raco {
+  color: #ffffff;
+  font-size: 9.6rem;
+  text-align: center;
+  margin-bottom: 1.3rem;
+  line-height: 1.2;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+/* TEXTO */
+.texto-descriptivo-teu-raco {
+  font-size: 5.95rem;
+  line-height: 1.7;
+  text-align: justify;
+  text-shadow: 0 0 4px rgba(0,0,0,0.7);
+}
+
+
+/* TABLET (>=768px) */
+@media (min-width: 48rem) {
+  .section-blanca {
+    padding: 3rem 3rem;
+  }
+
+  .titulo-descriptivo-teu-raco {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .texto-descriptivo-teu-raco {
+    font-size: 1rem;
+  }
+}
+
+/* ESCRITORIO (>=1024px) */
+@media (min-width: 64rem) {
+  .section-blanca {
+    padding: 4rem 5rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .section-container {
+    max-width: 60rem;   /* ~960px */
+  }
+
+  .titulo-descriptivo-teu-raco {
+    font-size: 2.3rem;
+  }
+
+  .texto-descriptivo-teu-raco {
+    font-size: 1.05rem;
+  }
+}
+/*finaliza el estilo de la seccion descriptiva del teu raco */
+/*empieza el estilo del boton del whatsapp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+ 
+  color: white;
+ 
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: wpp-pop 0.5s ease;
+}
+  /* Animación de entrada */
+/* ANIMACIÓN DE ENTRADA */
+@keyframes wpp-pop {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ICONO de whatsapp */
+.whatsapp-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  padding: 0.6rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER (PC) */
+.whatsapp-button:hover .whatsapp-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* TOOLTIP */
+.whatsapp-tooltip {
+  background: #ffffff;
+  color: #0a0a0a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* MUESTRA EL TOOLTIP AL HACER HOVER */
+.whatsapp-button:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes wpp-pop {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE: ajustar tamaño en móvil */
+@media (max-width: 480px) {
+  .whatsapp-icon {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+  }
+
+  .whatsapp-tooltip {
+    font-size: 0.8rem;
+  }
+
+  .whatsapp-button {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

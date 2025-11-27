@@ -1,0 +1,359 @@
+   /*RESET / BASE*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: "Fredoka", "Baloo 2", system-ui, sans-serif;
+    /* Fondo único de la web: gradiente alegre, luminoso */
+    background: linear-gradient(
+        135deg,
+        #fef08a 0%,   /* amarillo claro vivo */
+        #facc15 18%,  /* amarillo intenso */
+        #bef264 36%,  /* verde lima */
+        #22c55e 54%,  /* verde brillante */
+        #38bdf8 76%,  /* azul vivo */
+        #fb7185 100%  /* rosa fuerte */
+    );
+    background-attachment: fixed;
+    color: #0f172a;
+    min-height: 100vh;
+    display: block; /* por si otro CSS pone body en flex */
+}
+
+/* Contenedor opcional si lo necesitas en otras secciones */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+  /* HEADER (TÍTULO + NAV FIJOS EN SU SITIO)*/
+
+header {
+    padding: 1.5rem 1rem 0.5rem;
+    position: relative;
+    z-index: 10; /* por encima del contenido, pero sin moverse */
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+.fun-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #111827;
+    text-shadow: 0 3px 8px rgba(15, 23, 42, 0.5);
+    margin-bottom: 1.2rem;
+}
+
+/* NAV */
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    color: #0f172a;
+    border: 2px solid rgba(15, 23, 42, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.5);
+    background-color: #facc15;
+}
+
+  /* VIDEO PRESENTACIÓN (RESPONSIVE, CENTRADO)*/
+
+.video-presentacion {
+    padding: 1.5rem 1.2rem 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.video-presentacion iframe {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 1.25rem;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
+    background: #000;
+}
+
+   /*CARRUSEL INFINITO, SUAVE, DE DERECHA A IZQUIERDA*/
+    .imagen-conteiner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;/* los bordes de la sección se quedan quietos */
+}
+
+/* Pista con todas las imágenes duplicadas */
+.slider-track {
+    display: flex;
+    gap: 0;                /* sin huecos entre fotos */
+    animation: scroll-infinito 60s linear infinite;
+}
+
+/* Imágenes del carrusel */
+.slider-track img {
+    display: block;
+    flex: 0 0 auto;
+    height: clamp(180px, 30vw, 260px);
+    width: auto;
+    object-fit: cover;
+
+    border-radius: 1.2rem;
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover: levantar y girar un poco a la izquierda */
+.slider-track img:hover {
+    transform: translateY(-10px) rotate(-4deg) scale(1.05);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 1);
+}
+
+/* Animación: de derecha a izquierda, infinita y suave
+   Al tener el bloque de imágenes duplicado */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+   /*DESCRIPCIÓN SERVICIOS*/
+
+.descripcion-de-los-servicios-disponibles-special {
+    width: 100%;
+    padding: 3rem 1.5rem 3.2rem;
+    color: #0f172a;
+}
+
+.descripcion-de-los-servicios-disponibles-special > * {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+/* Mejor lectura sobre gradiente: sombra en el texto */
+.titulo-servicios-special {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    text-align: center;
+    margin-bottom: 1.6rem;
+    color: #111827;
+    text-shadow: 0 3px 8px rgba(248, 250, 252, 0.85);
+}
+
+.parrafo-servicios-special {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+    color: #111827;
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.lista-servicios-special {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-servicio-special {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(15, 23, 42, 0.8);
+    background-color: rgba(255, 255, 255, 0.92); /* ligero para que se lea bien */
+}
+
+  /* FOOTER */
+
+footer {
+    width: 100%;
+    padding: 2.6rem 1.5rem 2.8rem;
+    color: #0f172a;
+}
+
+footer .container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 0;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 1.8rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* Tipografías algo más grandes y escalables */
+.footer-title {
+    font-size: clamp(1.2rem, 2.1vw, 1.6rem);
+    font-weight: 800;
+}
+
+.footer-text {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+}
+
+.footer-heading {
+    font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+    font-weight: 700;
+}
+
+.footer-link,
+.contact-text {
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+}
+
+/* Palabras de color que ya usas */
+.word-lime { color: #4d7c0f; }
+.word-pink { color: #be185d; }
+.word-cyan { color: #0369a1; }
+.word-violet { color: #6d28d9; }
+.word-pink-alt { color: #db2777; }
+.word-yellow { color: #ca8a04; }
+
+.footer-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-bottom {
+    margin-top: 1.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.75);
+    text-align: center;
+}
+
+.copyright {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+}
+
+  /* WHATSAPP*/
+
+.whatsapp-button {
+    position: fixed;
+    right: 1.1rem;
+    bottom: 1.4rem;
+    z-index: 80;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    background-color: #22c55e;
+    box-shadow: 0 12px 26px rgba(22, 163, 74, 0.8);
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 3.5rem;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: #0f172a;
+    color: #f9fafb;
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.7rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-button:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translate(0.25rem, 50%);
+}
+
+/*    RESPONSIVE */
+
+@media (min-width: 640px) {
+    .imagen-conteiner img {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+}
+
+@media (min-width: 900px) {
+    header {
+        padding-inline: 2rem;
+    }
+
+    .imagen-conteiner img {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .descripcion-de-los-servicios-disponibles-special {
+        padding-inline: 3rem;
+    }
+
+    footer {
+        padding-inline: 3rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+

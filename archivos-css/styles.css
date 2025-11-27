@@ -1,0 +1,38 @@
+/* Estilos generales */
+
+.main-wrapper {
+    position: relative;
+    z-index: var(--z-content);
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Utilidades de texto */
+.fun-title {
+    font-family: var(--font-fun);
+    font-weight: 700;
+}
+
+/* Smooth scroll para navegación */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive container padding */
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+}

@@ -1,0 +1,31 @@
+/* Decoraciones de fondo */
+
+
+#background-decorations {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: var(--z-background);
+   
+}
+
+
+.bg-decoration {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+/* Confetti (puntos de colores) */
+.confetti {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+body{
+        background: linear-gradient(135deg, #9be31e, #ecd977, #65ef98);
+
+}

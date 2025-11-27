@@ -1,0 +1,59 @@
+/* Variables CSS */
+
+:root {
+    /* Colores principales */
+    --color-lime-300: #bef264;
+    --color-lime-400: #a3e635;
+    --color-lime-500: #84cc16;
+    
+    --color-yellow-300: #fde047;
+    --color-yellow-400: #facc15;
+    --color-yellow-500: #eab308;
+    
+    --color-green-300: #86efac;
+    --color-green-400: #4ade80;
+    --color-green-500: #22c55e;
+    --color-green-600: #16a34a;
+    
+    --color-pink-400: #f472b6;
+    --color-pink-500: #ec4899;
+    
+    --color-fuchsia-300: #f0abfc;
+    --color-fuchsia-400: #e879f9;
+    --color-fuchsia-500: #d946ef;
+    
+    --color-cyan-400: #22d3ee;
+    
+    --color-violet-400: #a78bfa;
+    --color-violet-500: #8b5cf6;
+    
+    --color-purple-400: #c084fc;
+    --color-purple-500: #a855f7;
+    
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-gray-50: #f9fafb;
+    
+    --color-white: #ffffff;
+    --color-black: #000000;
+    
+    /* Fuentes */
+    --font-fun: 'Baloo 2', 'Fredoka', sans-serif;
+    
+    /* Espaciado */
+    --container-max-width: 1280px;
+    --container-padding: 1rem;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* Z-index */
+    --z-background: 0;
+    --z-content: 10;
+    --z-navbar: 50;
+    --z-whatsapp: 100;
+}
